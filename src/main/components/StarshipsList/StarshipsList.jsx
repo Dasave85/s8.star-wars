@@ -31,7 +31,7 @@ export const StarshipsList = ({ starships, setStarships }) => {
       <div className="col-8">
         {starships.map((starship) => (
           <ContainerItem className="p-2 m-2" key={starship.url}>
-            <NavLink className="m-2" to={`card/${starship.name}`}>
+            <NavLink className="m-2" to={`./${starship.name}`}>
               {starship.name}
             </NavLink>
 

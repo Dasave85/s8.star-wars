@@ -1,17 +1,18 @@
-import { useEffect, useState } from "react";
+import { useContext } from "react";
+import { UserContext } from "../context/UserContext";
+import { useMessage } from "./useMessage";
+import { useUser } from "./useUser";
+import { types } from "../types/types";
 
 export const useRegisterPage = () => {
-  const initialUser = { name: "", password: "", logged: false };
+  const { userList, dispatch } = useContext(UserContext);
 
-  const [user, setUser] = useState(initialUser);
-  const [userList, setUserList] = useState(() => {
-    const data = localStorage.getItem("users");
-    return data ? JSON.parse(data) : [];
-  });
-  const [message, setMessage] = useState("");
+  const { user, setUserInput, clearInput } = useUser();
+
+  const { message, showMessage } = useMessage();
 
   const handleInputChange = (e) => {
-    setUser({ ...user, [e.target.name]: e.target.value });
+    setUserInput({ ...user, [e.target.name]: e.target.value });
   };
 
   const onSubmit = (e) => {
@@ -19,36 +20,27 @@ export const useRegisterPage = () => {
     const userExist = userList.find((usr) => usr.name === user.name);
 
     if (userExist) {
-      setMessage(
-        `El usuario ${userExist.name} ya esta registrado, elige otro nombre`
-      );
-      setUser(initialUser);
+      showMessage(userExist);
+      clearInput();
       return;
     }
     registerUser(user);
   };
 
   const registerUser = (user) => {
-    if (!user.name) {
-      setMessage("Falta rellenar el campo del nombre");
+    if (!user.name || !user.password) {
+      showMessage(user);
       return;
     }
-    if (!user.password) {
-      setMessage("Falta rellenar el campo del password");
-      return;
-    }
-    setMessage("Usuario registrado");
-    setUserList([...userList, user]);
-    setUser(initialUser);
+    const action = {
+      type: types.signin,
+      payload: user,
+    };
+
+    showMessage("register");
+    dispatch(action);
+    clearInput();
   };
-
-  useEffect(() => {
-    localStorage.setItem("users", JSON.stringify(userList));
-  }, [userList]);
-
-  useEffect(() => {
-    userList.length > 0 && console.log({ Users_register: userList });
-  }, [userList]);
 
   return { user, message, onSubmit, handleInputChange };
 };
