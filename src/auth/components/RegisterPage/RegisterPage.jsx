@@ -1,16 +1,14 @@
 import { useRegisterPage } from "../../hooks/useRegisterPage";
 import "animate.css";
 import { MessageInputStyled } from "../MessageInput/MessageInputStyled";
+import { ContainerPage } from "./RegisterPageStyled";
 export const RegisterPage = () => {
   const { user, message, onSubmit, handleInputChange } = useRegisterPage();
 
   return (
-    <div
-      className="row bg-dark p-5 justify-content-center"
-      style={{ height: "300px" }}
-    >
+    <ContainerPage className="row pt-5">
       <div className="col-6">
-        <h1 className="text-center text-white pb-5">Register Page</h1>
+        <h1 className="pb-5">Register Page</h1>
         <form onSubmit={onSubmit}>
           <div className="row">
             <div className="col-5">
@@ -43,7 +41,7 @@ export const RegisterPage = () => {
             </div>
             <div className="col-2">
               <button className="btn btn-outline-secondary" type="submit">
-                sign in
+                Sign in
               </button>
             </div>
             <div className="row">
@@ -58,6 +56,6 @@ export const RegisterPage = () => {
           </div>
         </form>
       </div>
-    </div>
+    </ContainerPage>
   );
 };

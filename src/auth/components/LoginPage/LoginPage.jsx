@@ -4,6 +4,7 @@ import { UserContext } from "../../context/UserContext";
 import { useUser } from "../../hooks";
 import { types } from "../../types";
 import { MessageInputStyled } from "../MessageInput";
+import { ContainerPage } from "../RegisterPage/RegisterPageStyled";
 
 export const LoginPage = () => {
   const { userList, dispatch } = useContext(UserContext);
@@ -44,12 +45,9 @@ export const LoginPage = () => {
   };
 
   return (
-    <div
-      className="row bg-dark p-5 justify-content-center"
-      style={{ height: "300px" }}
-    >
+    <ContainerPage className="row p-5">
       <div className="col-6">
-        <h1 className="text-center text-white pb-5">Login Page</h1>
+        <h1 className="pb-5">Login Page</h1>
         <form onSubmit={onSubmit}>
           <div className="row">
             <div className="col-5">
@@ -97,6 +95,6 @@ export const LoginPage = () => {
           </div>
         </form>
       </div>
-    </div>
+    </ContainerPage>
   );
 };

@@ -18,4 +18,14 @@ export const ContainerCard = styled.div`
   img {
     border-bottom: 2px solid orangered;
   }
+  a {
+    text-decoration: none;
+    color: #999;
+    font-style: oblique;
+    font-size: 18px;
+    &:hover {
+      color: white;
+      font-size: 22px;
+    }
+  }
 `;

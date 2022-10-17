@@ -9,7 +9,9 @@ import {
   Home,
   StarshipsList,
   Navbar,
+  FilmsPage,
 } from "./main/components";
+import { PilotsPage } from "./main/components/PilotsPage/PilotsPage";
 import { PrivateRoutes } from "./router/PrivateRoutes";
 import { PublicRoutes } from "./router/PublicRoutes";
 
@@ -63,6 +65,22 @@ function App() {
               element={
                 <PrivateRoutes>
                   <CardStarship starships={starships} />
+                </PrivateRoutes>
+              }
+            />
+            <Route
+              path="/starships/:nameParam/pilots"
+              element={
+                <PrivateRoutes>
+                  <PilotsPage starships={starships} />
+                </PrivateRoutes>
+              }
+            />
+            <Route
+              path="/starships/:nameParam/films"
+              element={
+                <PrivateRoutes>
+                  <FilmsPage starships={starships} />
                 </PrivateRoutes>
               }
             />

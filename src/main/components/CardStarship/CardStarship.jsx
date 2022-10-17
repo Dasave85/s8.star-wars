@@ -1,5 +1,5 @@
 import React from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { NavLink, useNavigate, useParams } from "react-router-dom";
 import { getStarshipsByName } from "../helpers";
 import { getIdFromUrl } from "../helpers/getIdFromUrl";
 import "animate.css";
@@ -8,9 +8,9 @@ import { Container, ContainerCard } from "./CardStarshipStyled";
 export const CardStarship = ({ starships }) => {
   const { nameParam } = useParams();
   const navigate = useNavigate();
+  const backPage = () => navigate(-1);
 
   const arrayStarship = getStarshipsByName(starships, nameParam);
-  const backPage = () => navigate(-1);
   const starship = arrayStarship[0];
   const {
     name,
@@ -22,6 +22,7 @@ export const CardStarship = ({ starships }) => {
     crew,
     url,
   } = starship;
+
   const id = getIdFromUrl(url);
   return (
     <>
@@ -59,8 +60,17 @@ export const CardStarship = ({ starships }) => {
               <div className="col-6">
                 <p>Crew: {crew}</p>
               </div>
+              <div className="col-6">
+                <NavLink to={"./pilots"}>Pilots</NavLink>
+              </div>
+              <div className="col-6 ">
+                <NavLink to={"./films"}>Films</NavLink>
+              </div>
             </div>
-            <button onClick={backPage} className="btn btn-outline-secondary">
+            <button
+              onClick={backPage}
+              className="btn btn-outline-secondary mt-2"
+            >
               Back
             </button>
           </div>
