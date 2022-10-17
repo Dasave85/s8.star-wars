@@ -15,7 +15,7 @@ export const Header = () => {
         <img
           className="my-3 animate__animated animate__pulse"
           src={logo}
-          alt=""
+          alt="star wars"
         />
       </ContainerLogo>
       <ContainerLogin className="col-4 ">
