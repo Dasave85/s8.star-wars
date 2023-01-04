@@ -29,7 +29,7 @@ function App() {
           <Navbar />
           <Routes>
             <Route
-              path="https://dasave85.github.io/s8.star-wars/"
+              path="https://dasave85.github.io/s8.star-wars"
               element={<Navigate to={"/home"} />}
             />
             <Route path="/home" element={<Home />} />
