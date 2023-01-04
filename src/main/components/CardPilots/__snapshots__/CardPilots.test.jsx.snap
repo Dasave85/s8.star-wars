@@ -1,0 +1,99 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pruebas en el componente <CardPilot /> debe de hacer match con el snapshot 1`] = `
+<div>
+  <div
+    class="col-6"
+  >
+    <div
+      class="card m-5 border-2 "
+      style="width: 25rem;"
+    >
+      <div
+        class="card-body"
+      >
+        <h5
+          class="card-title my-3"
+        >
+          Pilot: 
+          James
+        </h5>
+        <hr />
+        <p
+          class="card-text col-6"
+        >
+          Height: 
+          1.73
+        </p>
+        <p
+          class="card-text col-6"
+        >
+          Birth Year: 
+          25/06/1985
+        </p>
+        <p
+          class="card-text col-6"
+        >
+          Mass: 
+          85
+        </p>
+        <p
+          class="card-text col-6"
+        >
+          Hair Color: 
+          brown
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Pruebas en el componente <CardPilot /> debe de mostrar la informacion de un piloto 1`] = `
+<div>
+  <div
+    class="col-6"
+  >
+    <div
+      class="card m-5 border-2 "
+      style="width: 25rem;"
+    >
+      <div
+        class="card-body"
+      >
+        <h5
+          class="card-title my-3"
+        >
+          Pilot: 
+          James
+        </h5>
+        <hr />
+        <p
+          class="card-text col-6"
+        >
+          Height: 
+          1.73
+        </p>
+        <p
+          class="card-text col-6"
+        >
+          Birth Year: 
+          25/06/1985
+        </p>
+        <p
+          class="card-text col-6"
+        >
+          Mass: 
+          85
+        </p>
+        <p
+          class="card-text col-6"
+        >
+          Hair Color: 
+          brown
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
