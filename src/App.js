@@ -28,7 +28,7 @@ function App() {
           <Header />
           <Navbar />
           <Routes>
-            <Route path="/" element={<Navigate to={"/home"} />} />
+            <Route path="s8.star-wars/" element={<Navigate to={"/home"} />} />
             <Route path="/home" element={<Home />} />
 
             <Route
